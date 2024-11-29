@@ -10,7 +10,7 @@ export default function Home() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}>
-        Hi i'm{" "}
+        Hi i&#39;m{" "}
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -19,7 +19,7 @@ export default function Home() {
         </motion.span>
       </motion.h1>
       <p className="text-xl mb-8 text-muted-foreground">
-        I'm a self-taught developer and beginner from Uruguay, passionate about
+        I&#39;m a self-taught developer and beginner from Uruguay, passionate about
         learning and experimenting with new technologies. I have experience
         creating bots in DiscordJS and developing plugins for
         CounterStrikeSharp. Although currently my interest is focused on web

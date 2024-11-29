@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import { ThemeToggle } from './ThemeToggle'
-import { AnimatedSeparator } from './ui/separator'
+import Link from "next/link"
+import { ThemeToggle } from "./ThemeToggle"
+import { AnimatedSeparator } from "./ui/separator"
 
 export default function Header() {
   return (

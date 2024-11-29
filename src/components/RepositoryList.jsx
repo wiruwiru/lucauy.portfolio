@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 
-const BLACKLIST = ['wiruwiru', 'Stats', 'cms']
+const BLACKLIST = ["wiruwiru", "Stats", "cms"]
 
 export default function RepositoryList() {
   const [repositories, setRepositories] = useState([])
@@ -10,9 +10,9 @@ export default function RepositoryList() {
   useEffect(() => {
     async function fetchRepositories() {
       try {
-        const response = await fetch('https://api.github.com/users/wiruwiru/repos')
+        const response = await fetch("https://api.github.com/users/wiruwiru/repos")
         if (!response.ok) {
-          throw new Error('Failed to fetch repositories')
+          throw new Error("Failed to fetch repositories")
         }
         const data = await response.json()
         const filteredRepos = data
@@ -21,8 +21,8 @@ export default function RepositoryList() {
         setRepositories(filteredRepos)
         setLoading(false)
       } catch (error) {
-        console.error('Error fetching repositories:', error)
-        setError('Failed to load repositories. Please try again later.')
+        console.error("Error fetching repositories:", error)
+        setError("Failed to load repositories. Please try again later.")
         setLoading(false)
       }
     }
@@ -45,7 +45,7 @@ export default function RepositoryList() {
         {repositories.map((repo) => (
           <div key={repo.id} className="border border-border rounded-lg p-6 hover:shadow-lg transition-shadow bg-card flex flex-col">
             <h3 className="text-xl font-semibold mb-2">{repo.name}</h3>
-            <p className="text-muted-foreground mb-4 flex-grow">{repo.description || 'No description available'}</p>
+            <p className="text-muted-foreground mb-4 flex-grow">{repo.description || "No description available"}</p>
             <div className="text-center">
               <a 
                 href={repo.html_url} 
