@@ -15,7 +15,7 @@ export default function Githubstats() {
         </motion.h2>
         <div className="flex justify-center mb-12">
           <img 
-            src="https://skillicons.dev/icons?i=html,css,javascript,discordjs,nodejs,nextjs,tailwind,cs,mysql,mongodb,supabase" 
+            src="https://skillicons.dev/icons?i=html,css,javascript,discordjs,nodejs,nextjs,tailwind,cs,mysql,supabase" 
             alt="Skills" 
             className="w-full max-w-[500px]"/>
         </div>

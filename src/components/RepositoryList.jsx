@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/button"
 
 const BLACKLIST = ["wiruwiru", "Stats", "cms"]
+const INITIAL_DISPLAY_COUNT = 6
 
 export default function RepositoryList() {
   const [repositories, setRepositories] = useState([])
+  const [displayCount, setDisplayCount] = useState(INITIAL_DISPLAY_COUNT)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
@@ -30,6 +33,12 @@ export default function RepositoryList() {
     fetchRepositories()
   }, [])
 
+  const toggleDisplayCount = () => {
+    setDisplayCount(prevCount => 
+      prevCount === INITIAL_DISPLAY_COUNT ? repositories.length : INITIAL_DISPLAY_COUNT
+    )
+  }
+
   if (loading) {
     return <div className="text-center py-20">Loading projects...</div>
   }
@@ -38,11 +47,14 @@ export default function RepositoryList() {
     return <div className="text-center py-20 text-red-500">{error}</div>
   }
 
+  const displayedRepositories = repositories.slice(0, displayCount)
+  const isShowingAll = displayCount === repositories.length
+
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-8">
       <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {repositories.map((repo) => (
+        {displayedRepositories.map((repo) => (
           <div key={repo.id} className="border border-border rounded-lg p-6 hover:shadow-lg transition-shadow bg-card flex flex-col">
             <h3 className="text-xl font-semibold mb-2">{repo.name}</h3>
             <p className="text-muted-foreground mb-4 flex-grow">{repo.description || "No description available"}</p>
@@ -58,6 +70,13 @@ export default function RepositoryList() {
           </div>
         ))}
       </div>
+      {repositories.length > INITIAL_DISPLAY_COUNT && (
+        <div className="text-center mt-8">
+          <Button onClick={toggleDisplayCount}>
+            {isShowingAll ? "Show Less" : "Load More"}
+          </Button>
+        </div>
+      )}
     </section>
   )
 }

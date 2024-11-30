@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Github } from "lucide-react";
+import { MessageCircle, Github } from 'lucide-react';
 import { MainCanvas } from "@/components/three/MainCanvas";
+import { AnimatedArrow } from "./ui/animatedarrow";
+import { LocalTime } from "@/components/LocalTime";
 
 export default function Home() {
   return (
@@ -48,8 +50,12 @@ export default function Home() {
           </a>
         </Button>
       </div>
-      <div className="flex justify-center">
-        <div className="flex justify-end w-full">
+      <div className="relative w-full flex flex-col lg:flex-row justify-between items-center gap-8">
+        <div className="w-full lg:w-[400px] order-1">
+          <LocalTime />
+        </div>
+        <AnimatedArrow className="order-3 lg:order-2" />
+        <div className="w-full lg:w-[400px] order-2 lg:order-3">
           <MainCanvas />
         </div>
       </div>
