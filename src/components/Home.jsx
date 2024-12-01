@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Github } from 'lucide-react';
-import { MainCanvas } from "@/components/three/MainCanvas";
+import { CatModelCanvas } from "@/components/three/CatModelCanvas";
 import { AnimatedArrow } from "./ui/animatedarrow";
 import { LocalTime } from "@/components/LocalTime";
 
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
         <AnimatedArrow className="order-3 lg:order-2" />
         <div className="w-full lg:w-[400px] order-2 lg:order-3">
-          <MainCanvas />
+          <CatModelCanvas />
         </div>
       </div>
     </section>

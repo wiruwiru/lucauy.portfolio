@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { CatModel } from './CatModel';
 
-export function MainCanvas() {
+export function CatModelCanvas() {
     return (
         <div className="w-[400px] h-[300px]">
             <Canvas
