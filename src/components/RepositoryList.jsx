@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 
-const BLACKLIST = ["wiruwiru", "Stats", "cms", "caawards"]
+const BLACKLIST = ["wiruwiru", "Stats", "cms"]
 const INITIAL_DISPLAY_COUNT = 6
 
 export default function RepositoryList() {
