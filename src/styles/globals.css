@@ -4,10 +4,10 @@
  
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 80%;
     --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 0 0% 90%;
+    --card-foreground: 0 0% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
     --primary: 240 5.9% 10%;
@@ -20,8 +20,8 @@
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
+    --border: 0 0% 70%;
+    --input: 0 0% 70%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
   }
@@ -63,7 +63,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--background));
+  background: hsl(0, 0%, 98%);
 }
 
 ::-webkit-scrollbar-thumb {

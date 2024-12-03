@@ -59,13 +59,7 @@ export default function RepositoryList() {
             <h3 className="text-xl font-semibold mb-2">{repo.name}</h3>
             <p className="text-muted-foreground mb-4 flex-grow">{repo.description || "No description available"}</p>
             <div className="text-center">
-              <a 
-                href={repo.html_url} 
-                className="inline-block text-primary hover:underline px-4 py-2 border border-primary rounded-md transition-colors hover:bg-primary hover:text-primary-foreground"
-                target="_blank" 
-                rel="noopener noreferrer">
-                View Project
-              </a>
+              <a href={repo.html_url} className="inline-block text-primary hover:underline px-4 py-2 border border-primary rounded-md transition-colors hover:bg-primary hover:text-primary-foreground" target="_blank" rel="noopener noreferrer">View Project</a>
             </div>
           </div>
         ))}
